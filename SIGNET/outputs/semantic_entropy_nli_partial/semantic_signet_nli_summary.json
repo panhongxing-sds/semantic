@@ -1,0 +1,17 @@
+{
+  "json_path": "/share/home/luenqiao/phx/data/no_preprompt/Mistral-7B-Instruct-v0.3/hotpot_qa_final_labeled_results.json",
+  "csv_path": "/share/home/luenqiao/phx/data/no_preprompt/Mistral-7B-Instruct-v0.3/uncertainty.csv",
+  "dataset_stats": {
+    "total_ids": 50,
+    "kept_ids": 50,
+    "dropped_ids": 0
+  },
+  "train_graphs": 31,
+  "test_graphs": 10,
+  "test_auc": NaN,
+  "pearson_ood_vs_oracle": -0.1681578604176934,
+  "spearman_ood_vs_oracle": -0.15028240326551645,
+  "edge_definition": "NLI entailment score: (p(i=>j)+p(j=>i))/2 from DeBERTa-MNLI",
+  "node_definition": "sampled responses per question",
+  "pred_csv": "/share/home/luenqiao/phx/SIGNET/outputs/semantic_entropy_nli_partial/semantic_signet_nli_scores.csv"
+}

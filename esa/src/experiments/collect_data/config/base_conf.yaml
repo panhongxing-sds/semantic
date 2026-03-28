@@ -1,0 +1,19 @@
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+
+defaults:
+  - _self_
+
+dataset_name: potato
+temperature: 1.0
+num_responses: 100
+response_batch_size: 50 # try to get this as close to num_responses as possible with cuda oom for max efficiency
+max_tokens: 100
+batch_size: 2
+n_llms: 4 
+first_llm_port: 8081
+preprompt: false
+
+mode: "collect_one" # "collect_all" "collect_one"  # collect_all: collect all initial responses to all questions, collect_one: after we've sampled all responses for each question, take the file and for each query, sample one response at temperature 0.1 for llm judging

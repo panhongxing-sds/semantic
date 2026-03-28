@@ -1,0 +1,73 @@
+{
+  "json_path": "/share/home/luenqiao/phx/data/no_preprompt/Mistral-7B-Instruct-v0.3/hotpot_qa_final_labeled_results.json",
+  "n": 10,
+  "oracle_n": 100,
+  "num_rows": 1852,
+  "metrics": {
+    "num_sets": {
+      "mae": 3.648488120950324,
+      "rmse": 5.59847055633897,
+      "n_valid": 1852
+    },
+    "gt": {
+      "mae": 3.2992891015581454,
+      "rmse": 4.86478456720065,
+      "n_valid": 1851
+    },
+    "ggt": {
+      "mae": 3.297815203903685,
+      "rmse": 4.962716793550929,
+      "n_valid": 1852
+    },
+    "ueigv": {
+      "mae": 3.5127974321266486,
+      "rmse": 5.49426491771543,
+      "n_valid": 1852
+    },
+    "hybrid": {
+      "mae": 3.0644928029489287,
+      "rmse": 4.70052390899566,
+      "n_valid": 1852
+    },
+    "hybrid_ggt": {
+      "mae": 3.0649316899972954,
+      "rmse": 4.762224181914815,
+      "n_valid": 1852
+    },
+    "miller": {
+      "mae": 3.0093113634918476,
+      "rmse": 4.687705451463921,
+      "n_valid": 1852
+    },
+    "len_boost": {
+      "mae": 2.9112638908528043,
+      "rmse": 4.452735676752974,
+      "n_valid": 1852
+    },
+    "ceil_hybrid_ggt": {
+      "mae": 2.723002159827214,
+      "rmse": 4.455261165390403,
+      "n_valid": 1852
+    }
+  },
+  "hybrid_ggt_vs_hybrid": {
+    "better": 359,
+    "worse": 292,
+    "same": 1201
+  },
+  "miller_vs_hybrid_ggt": {
+    "better": 1051,
+    "worse": 123,
+    "same": 678
+  },
+  "len_boost_vs_hybrid_ggt": {
+    "better": 966,
+    "worse": 886,
+    "same": 0
+  },
+  "ceil_vs_hybrid_ggt": {
+    "better": 1405,
+    "worse": 307,
+    "same": 140
+  }
+}

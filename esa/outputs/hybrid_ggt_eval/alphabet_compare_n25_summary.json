@@ -1,0 +1,43 @@
+{
+  "json_path": "/share/home/luenqiao/phx/data/no_preprompt/Mistral-7B-Instruct-v0.3/hotpot_qa_final_labeled_results.json",
+  "n": 25,
+  "oracle_n": 100,
+  "num_rows": 1852,
+  "metrics": {
+    "num_sets": {
+      "mae": 2.6609071274298057,
+      "rmse": 4.238183929911266,
+      "n_valid": 1852
+    },
+    "gt": {
+      "mae": 2.4994425140259042,
+      "rmse": 3.8479645948034844,
+      "n_valid": 1852
+    },
+    "ggt": {
+      "mae": 2.4774243244029432,
+      "rmse": 3.8099143064946865,
+      "n_valid": 1852
+    },
+    "ueigv": {
+      "mae": 2.8806686536647605,
+      "rmse": 4.587300978533208,
+      "n_valid": 1852
+    },
+    "hybrid": {
+      "mae": 2.2826583644308145,
+      "rmse": 3.632679197594642,
+      "n_valid": 1852
+    },
+    "hybrid_ggt": {
+      "mae": 2.2667670060650393,
+      "rmse": 3.6035913514743205,
+      "n_valid": 1852
+    }
+  },
+  "hybrid_ggt_vs_hybrid": {
+    "better": 325,
+    "worse": 264,
+    "same": 1263
+  }
+}

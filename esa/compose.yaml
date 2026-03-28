@@ -1,0 +1,44 @@
+services:
+  vllm1:
+    image: vllm/vllm-openai:latest
+    env_file:
+      - .env
+    command: >
+      --model ${MODEL_NAME}
+      --tensor-parallel-size ${NUM_SHARDS}
+      --dtype bfloat16
+      --max-model-len ${MAX_TOTAL_TOKENS}
+      --download-dir /data
+      --host 0.0.0.0
+      --port 8081
+    volumes:
+      - ${VOLUME}:/data
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: [ '0' ]  
+              capabilities: [ gpu ]
+    shm_size: 10gb
+    ports:
+      - "8081:8081"
+  tgi1:
+    image: ghcr.io/huggingface/text-generation-inference:latest
+    # restart: unless-stopped
+    env_file:
+      - .env
+    command: >
+      --model-id ${MODEL_NAME} --num-shard ${NUM_SHARDS} --max-input-length ${MAX_INPUT_LENGTH} --max-batch-prefill-tokens ${MAX_BATCH_PREFILL_TOKENS} --max-total-tokens ${MAX_TOTAL_TOKENS} --dtype bfloat16 --max-client-batch-size ${MAX_CLIENT_BATCH_SIZE} --max-concurrent-requests ${MAX_CONCURRENT_REQUESTS}
+    volumes:
+      - ${VOLUME}:/data
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: [ '0' ]
+              capabilities: [ gpu ]
+    shm_size: 10gb
+    ports:
+      - "8081:80"

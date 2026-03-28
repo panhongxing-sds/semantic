@@ -1,0 +1,30 @@
+general:
+  seed: 123
+  temperature: 1.0
+  strict_entailment: True
+  length_normalize: True
+  gpu: False
+  preprompt: True
+
+clustering:
+  embedder: "BAAI/bge-base-en-v1.5"
+  threshold: 0.925
+  max_llm_tokens: 120000
+
+OAI:
+  oai_llm_small: "gpt-4o-mini"
+  oai_llm_medium: "gpt-4o"
+  oai_llm_large: "gpt-4-turbo"
+
+NLI:
+  model: "cross-encoder/nli-deberta-v3-base"
+
+LLAMA:
+  llama_small: "meta-llama/Meta-Llama-3.1-8B-Instruct"
+
+CSC:
+  n_questions: 10
+  questions_prompt: "Using the available function, generate [NUM_QUESTIONS] questions from diverse topic areas. Each question should request only a single answer, but there should be exactly [NUM_ANSWERS] possible semantically distinct correct answer(s) to the question. For example, 'Name a continent on Earth' has seven possible correct answers, because Earth has seven continents, but 'Name all the continents on Earth' only has one possible semantically distinct correct answer (a list of all seven continents)."
+  selfeval_prompt: "You are provided the following list of questions. Using the available function, provide the number of possible semantically distinct answers to each question:"
+  questions_description: "A collection of questions with exactly [NUM_ANSWERS] possible correct answer(s)."
+  selfeval_description: "The number of possible semantically distinct answers to each question in a provided collection."

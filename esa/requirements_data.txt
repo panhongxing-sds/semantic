@@ -1,0 +1,15 @@
+numpy
+python-dotenv
+PyYAML
+scikit_learn
+scipy
+torch
+transformers
+tiktoken
+openai
+
+# new added
+huggingface-hub
+datasets
+hydra-core
+jupyter
