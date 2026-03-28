@@ -1,7 +1,3 @@
-# Large local data files (too large for regular GitHub push)
-data/no_preprompt/Mistral-7B-Instruct-v0.3/hotpot_qa_final_results.json
-data/no_preprompt/Mistral-7B-Instruct-v0.3/hotpot_qa_final_labeled_results.json
-
 # Python cache
 __pycache__/
 *.pyc
